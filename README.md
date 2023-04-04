@@ -1,6 +1,5 @@
 ## [Two Sum](https://leetcode.com/problems/two-sum/description/)
 > Submission code: [Check here](https://leetcode.com/problems/two-sum/submissions/926969861/)
-<details><summary>Code</summary>
 
 ##### Concept
 <p>
@@ -13,6 +12,8 @@ or b = 2,
 so if we can find another element b that is 2 in the array then we can say there exists a pair.
 ```
 </p>
+
+<details><summary>Code</summary>
 
 <p>
 
