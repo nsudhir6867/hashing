@@ -112,5 +112,56 @@ int main() {
 </p>
 </details>
 	
+## [Max distance between same elements](https://practice.geeksforgeeks.org/problems/max-distance-between-same-elements/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
+> Submission code: [Check here](https://practice.geeksforgeeks.org/problems/max-distance-between-same-elements/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
+
+##### Concept
+
+```
+The idea is to traverse the input array and store the index of the first occurrence in a hash map. 
+For every other occurrence, find the difference between the index and the first index stored in the hash map.
+If the difference is more than the result so far, then update the result.
+
+```
+
+##### Algorithm
+
+```
+1. Take a hashmap of type <int, int>
+2. Take a variable maximum.
+2. Traverse the array and try to find if same element is present in the hashmap or not.
+3. if it's not present, insert (nums[i], i) into map and move forward.
+4. if it's present, find the difference of indices of both occurence. if difference is greater than the maximum, update maximum.
+
+```
+
+<details><summary>Code</summary>
+
+<p>
+
+	
+```C++
+class Solution{
+    public:
+    // your task is to complete this function
+    int maxDistance(int arr[], int n)
+    {
+        unordered_map<int,int> freq;
+        int maxi = 0;
+        for(int i=0; i<n; i++) {
+            if(freq.find(arr[i]) != freq.end()) {
+                int distance = i-freq[arr[i]];
+                maxi = max(maxi, distance);
+            }else freq[arr[i]] = i;
+            
+        }
+        return maxi;
+    }
+};
+	
+```
+</p>
+</details>
+	
 
 	
