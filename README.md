@@ -14,6 +14,15 @@ so if we can find another element b that is 2 in the array then we can say there
 
 ```
 
+##### Algorithm
+
+```
+1. Take a map of type <int, int>
+2. Traverse the array and try to find if element 'target - nums[i]' is present in the map.
+3. if it's not present, insert (nums[i], i) into map and move forward.
+4. if it's present, push the index of both element into an array and return it.
+```
+
 <details><summary>Code</summary>
 
 <p>
@@ -43,6 +52,3 @@ public:
 </p>
 </details>
 	
-###### Take Away
-	
-> Let a number x occurs freq[x] times then we need N - freq[x] operations. To minimize (N - freq[x]) we have to maximize freq[x].
