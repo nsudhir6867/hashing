@@ -2,7 +2,7 @@
 > Submission code: [Check here](https://leetcode.com/problems/two-sum/submissions/926969861/)
 
 ##### Concept
-<p>
+
 ```C++
 let given array nums = [3, 4, 10, 6, 2, 8] and target = 12;
 find a and b such that a + b = 12,
@@ -11,7 +11,6 @@ then 10 + b = 12;
 or b = 2,
 so if we can find another element b that is 2 in the array then we can say there exists a pair.
 ```
-</p>
 
 <details><summary>Code</summary>
 
