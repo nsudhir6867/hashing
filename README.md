@@ -21,6 +21,8 @@ so if we can find another element b that is 2 in the array then we can say there
 2. Traverse the array and try to find if element 'target - nums[i]' is present in the map.
 3. if it's not present, insert (nums[i], i) into map and move forward.
 4. if it's present, push the index of both element into an array and return it.
+Note: Always check if target-nums[i] exists in the map before inserting the it into the map, because if you check after inserting, 
+you will find the same element for 6 in the map.
 ```
 
 <details><summary>Code</summary>
