@@ -3,7 +3,7 @@
 
 ##### Concept
 <p>
-```
+```C++
 let given array nums = [3, 4, 10, 6, 2, 8] and target = 12;
 find a and b such that a + b = 12,
 if we know one element a = 10;
