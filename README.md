@@ -162,6 +162,55 @@ class Solution{
 ```
 </p>
 </details>
+
+## [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)
+> Submission code: [Check here](https://leetcode.com/problems/first-unique-character-in-a-string/submissions/927026665/)
+
+##### Concept
+
+```
+Storing frequency and then checking which has frequency as 1.
+
+```
+
+##### Algorithm
+
+```
+1. Take a hashmap of type <int, int>
+2. store the frequency of each character of string.
+2. Traverse each character of string and check which character has first occurence with frequency as 1.
+
+```
+
+<details><summary>Code</summary>
+
+<p>
+
+	
+```C++
+class Solution {
+public:
+    int firstUniqChar(string s) {
+        int unique = -1;
+        unordered_map<char, int> freq;
+        for(int i=0; i<s.size(); i++) {
+            freq[s[i]]++;
+        }
+        for(int i=0; i<s.size(); i++) {
+            if(freq[s[i]]>1) {
+                continue;
+            }else {
+                unique = i;
+                return unique;
+            }
+        }
+        return unique;
+    }
+};
+	
+```
+</p>
+</details>
 	
 
 	
