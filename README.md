@@ -3,13 +3,15 @@
 
 ##### Concept
 
-```C++
+```
+
 let given array nums = [3, 4, 10, 6, 2, 8] and target = 12;
 find a and b such that a + b = 12,
 if we know one element a = 10;
 then 10 + b = 12;
 or b = 2,
 so if we can find another element b that is 2 in the array then we can say there exists a pair.
+
 ```
 
 <details><summary>Code</summary>
