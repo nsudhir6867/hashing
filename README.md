@@ -271,4 +271,64 @@ public:
 </p>
 </details>
 	
+
+## [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+> Submission code: [Check here](https://leetcode.com/problems/longest-consecutive-sequence/submissions/928263138/)
+
+##### Concept
+
+```
+we can check loop over the array and check if any number that is one less than the current number exists in the array,
+if it doesn't exist then we can start counting the sequence from that number.
+
+```
+
+##### Algorithm
+
+```
+1. Take two hashmap present and checked of type <int, bool>
+2. Iterate over the given array and insert the element and true in present hashmap.
+3. Iterate over the given array and check if a number that 1 less than the current number doesn't exist in present 
+hashmap and current number is not in the checked hashmap.
+4. If it doesn't exist in present hashmap and checked hashmap, then we know that it can be start point of any subsequence.
+5. Now we will check if the sequence is present by incrementing the start point,
+6. Once the sequence is over, we will check if it's length is maximum or not.
+7. We will update the maximum_sequence length.
+```
+
+<details><summary>Code</summary>
+
+<p>
+
 	
+```C++
+class Solution {
+public:
+    int longestConsecutive(vector<int>& nums) {
+        int longest_chain_conseq;
+        unordered_map<int,bool> present;
+        unordered_map<int, bool> checked;
+        for(auto n: nums) {
+            present[n] = true;
+        }
+        for(int i=0; i<nums.size(); i++) {
+            if(!checked[nums[i]] && !present[nums[i]-1]) {
+                int current_chain = 0;
+                int start = nums[i];
+                while(present[start]) {
+                    current_chain++;
+                    checked[start] = true;
+                    start++;
+                }
+                longest_chain_conseq = max(longest_chain_conseq, current_chain);
+            }
+        }
+        return longest_chain_conseq;
+    }
+};
+	
+```
+</p>
+</details>
+	
+
