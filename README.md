@@ -330,5 +330,77 @@ public:
 ```
 </p>
 </details>
+
+## [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+> Submission code: [Check here](https://leetcode.com/problems/longest-consecutive-sequence/submissions/928263138/)
+
+##### Concept
+
+```
+
+We will use concept of prefix sum
+p(r) = sum from 0 to r
+p(l-1) = sum from 0 to l-1
+p(r) = p(l-1) + Sum(l,r)
+if S(l,r) = 0 according to question means p(r) = p(l-1)
+we maintain a unordered_map<int,int> to store <prefixSum, first_occurence_index>
+we maintain a sum variable = 0, longest_length = 0
+we store whole prefix sum in an variable sum = 0 one by one
+we store all prefix_sum and first_occ_index in our map.
+when we get a prefix_sum we check in map if its not present we store it in the map
+if its present, we do that index i - map[that_prefix_sum] i.e map[4] give us first_occ_index for that sum and then we update the longest_length
+
+```
+
+##### Algorithm
+
+```
+1. Create an hashmap named firstOccurrence,
+2. Create variable sum and maxi to store sum and largest subarray.
+3. Iterate over the array and add the element to sum, 
+if sum becomes zero, update maxi with i+1, else check if sum is present in the firstOccurence,
+4. If it's present, find the length of of the subarray that is difference between the first occurence and current occurence,
+and update the maxi if the subarray length is maximum.
+5. If element is not present, then insert it in the firstOccurence.
+```
+
+<details><summary>Code</summary>
+
+<p>
+
 	
+```C++
+class Solution{
+    public:
+    int maxLen(vector<int>&A, int n)
+    {   
+        // Your code here
+        
+        unordered_map<int, int> firstOccurence;
+        int sum=0;
+        int maxi = 0;
+        for(int i=0; i<A.size(); i++) {
+            sum+= A[i];
+            if(sum == 0) maxi = i+1;
+            else {
+                if(firstOccurence.find(sum) != firstOccurence.end()) {
+                    int len = i-firstOccurence[sum];
+                    maxi = max(maxi, len);
+                }else firstOccurence[sum] = i;
+            }
+            
+        }
+        return maxi;
+        
+        
+        
+    }
+};
+
+	
+```
+</p>
+</details>
+	
+
 
