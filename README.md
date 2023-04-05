@@ -331,8 +331,8 @@ public:
 </p>
 </details>
 
-## [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
-> Submission code: [Check here](https://leetcode.com/problems/longest-consecutive-sequence/submissions/928263138/)
+## [Largest subarray with 0 sum]([https://leetcode.com/problems/longest-consecutive-sequence/](https://practice.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article))
+> Submission code: [Check here]([https://leetcode.com/problems/longest-consecutive-sequence/submissions/928263138/](https://practice.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article))
 
 ##### Concept
 
