@@ -402,5 +402,52 @@ class Solution{
 </p>
 </details>
 	
+## [Count Number of Pairs With Absolute Difference K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/description/)
+> Submission code: [Check here](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/submissions/927177323/)
+
+##### Concept
+
+```
+let a is an element of given array.
+we have to find another element that is k less than a or k greater than a in the given array.
+
+```
+
+##### Algorithm
+
+```
+1. Create a hashmap occurence.
+2. Iterate over array check for each element if 'element + k' or 'element - k' or both exists in the map,
+3. If it doesn't exist, insert the element in the hashmap with its frequency. eg: occurence[nums[i]]++
+4. If it exists, increment the count of pair by the frequency of the element.
+```
+
+<details><summary>Code</summary>
+
+<p>
+
+	
+```C++
+class Solution {
+public:
+    int countKDifference(vector<int>& nums, int k) {
+        unordered_map<int,int> occurence;
+        int count = 0;
+        for(int i=0; i<nums.size(); i++) {
+            int pair1 = nums[i]-k;
+            int pair2 = nums[i] + k;
+            count+=occurence[pair1];
+            count+=occurence[pair2];
+            occurence[nums[i]]++; 
+        }
+        return count;
+    }
+};
+	
+```
+</p>
+</details>
+	
+
 
 
