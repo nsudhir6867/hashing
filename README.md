@@ -291,7 +291,7 @@ if it doesn't exist then we can start counting the sequence from that number.
 3. Iterate over the given array and check if a number that 1 less than the current number doesn't exist in present 
 hashmap and current number is not in the checked hashmap.
 4. If it doesn't exist in present hashmap and checked hashmap, then we know that it can be start point of any subsequence.
-5. Now we will check if the sequence is present by incrementing the start point,
+5. Now we will check if the sequence is present by incrementing the start point, we will also set the checked hashmap to true to for that number.
 6. Once the sequence is over, we will check if it's length is maximum or not.
 7. We will update the maximum_sequence length.
 ```
