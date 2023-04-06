@@ -508,5 +508,129 @@ class Solution{
 </details>
 	
 
+## [Longest Consecutive Sequence](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/)
+> Submission code: [Check here](https://leetcode.com/problems/longest-consecutive-sequence/submissions/928263138/)
+
+##### Concept
+
+```
+There is two types of strings.
+(i) s[0] == s[1]
+(ii) s[0] != s[1]
+
+if we have type(i) string something like -> ["lc" , "cl", "cl" ],
+our palindrome will be ("lc cl").
+It means if we have reverse of the string present in the array then 
+the count of length of palindrome will be min(occurrence["lc"], occurrence["cl"])*2.
+
+if we have type(ii) string something like -> ["gg","gg","gg","gg","gg","ll","ll","ll"]
+our palindrome will be ("gg gg ll gg ll gg gg") or ("ll gg gg ll gg gg ll")
+It means that 2 different strings of type(ii) occurr in odd number of times, 
+then we can use only one string(all 5 "gg" or all 3 "ll") for odd times.
+other strings can be used for even times only(4 times "gg" or 2 times "ll")
+
+```
+
+##### Algorithm
+
+```
+1. Create a hashmap and store the occurrences of each string present in the array.
+2. Create variable to store length of palindrome.
+3. Create a count variable,
+4. Create a variable flag to check if we have used type(ii) string odd number of times.
+5. Iterate over the given array of strings.
+	6. if the word is type(i). if it is, create a variable and store the reverse of word in it.
+		7. Check in the hashmap if the reverse is present. if it is, find the count = min(occurrence[word], occurrence[reverse])
+		8. Update the lenghth.
+		9. erase the word and its reverse from the map so that it can not be counted twice.
+	9.else if the word is type(ii),
+		10. find its occurrence(means count) from hashmap.
+		11. if count is even, increment the length by (count*2)
+		12. If count is odd, 
+			13. If flag is false, increment length by (count*2), set flag to true.
+			14. If flag is true, increment length by [(count-1)*2]
+		15. Erase the word from hashmap
+
+```
+
+<details><summary>Code</summary>
+
+<p>
+
+	
+```C++
+
+int longestPalindrome(vector<string>& words) {
+        int len = 0;
+        int count = 0;
+        bool flag = 0;
+        // store all the strings with their number of occurences
+        unordered_map<string,int> mp;
+        for(int i = 0;i<words.size();i++)
+        {
+            mp[words[i]]++;
+        }
+        // now check cases
+        for(int i = 0;i<words.size();i++)
+        {
+            // if s[0] != s[1]
+            if(words[i][0] != words[i][1])
+            {
+              string s = "";
+              // store the reverse
+              s += words[i][1];
+              s += words[i][0];
+              // if we find the reverse in the map
+              // we take the minimum count
+              // we do len = count*4 because each string has 2 characters
+              if(mp.find(s) != mp.end())
+              {
+                count = min(mp[words[i]],mp[s]);
+                len += count*4;
+              }
+              // erase the words which are already counted including the reverse one
+              mp.erase(words[i]);
+              mp.erase(s);
+            }
+            // if s[0] == s[1]
+            else if(words[i][0] == words[i][1])
+            {
+                // get number of occurence of such string
+                count = mp[words[i]];
+                // if that string occur even number of times
+                if(mp[words[i]]%2==0)
+                {
+                    // if its even
+                    len += count*2;
+                }
+                else{
+                    // if its odd
+                    // flag = 0 means its the first string that occurs odd number of times
+                    // if its the first one then we can use all its occurences for our result
+                    if(flag==0)
+                    {
+                      // means its the first string which is equal but odd occurence
+                      len += count*2;
+                      // make sure to turn the flag=1 because we already have one string with odd number of occurences in our output now
+                      flag = 1;
+                    }
+                    else{
+                        // if flag = 1 already then we need to count -1 from the all occurence of that string
+                        len += (count-1)*2;
+                    }
+                }
+                // erase that word from the map
+                mp.erase(words[i]);
+            }
+        }
+        // return the output length
+        return len;
+    }
+	
+```
+</p>
+</details>
+	
+
 
 
