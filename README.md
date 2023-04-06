@@ -508,8 +508,8 @@ class Solution{
 </details>
 	
 
-## [Longest Consecutive Sequence](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/)
-> Submission code: [Check here](https://leetcode.com/problems/longest-consecutive-sequence/submissions/928263138/)
+## [Longest Palindrome by Concatenating Two Letter Words](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/)
+> Submission code: [Check here](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/submissions/929162572/)
 
 ##### Concept
 
