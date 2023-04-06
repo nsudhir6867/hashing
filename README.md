@@ -449,5 +449,64 @@ public:
 </details>
 	
 
+## [Subarrays with sum K](https://practice.geeksforgeeks.org/problems/subarrays-with-sum-k/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
+> Submission code: [Check here](https://practice.geeksforgeeks.org/problems/subarrays-with-sum-k/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
+
+##### Concept
+
+```
+range =                        l           r
+let array arr =  [a1, a2, a3, a4, a5, a6, a7, a8, a9 ]
+index =            0   1   2   3   4   5   6   7   8
+let 's' be the prefix sum till r.
+let 'k' be the prefix sum of subarray from (l to r)
+then prefix sum from range ( 0 to 'l-1') will be sum-k;
+
+so at each index, we will have total sum till that index 's',
+then we just need to check if there is a prefix which is having sum = 's-k' is present.
+if it's present then remaining part till the current index will have sum 'k'.
+```
+
+##### Algorithm
+
+```
+1. Create a hashmap 'prefixOccurrences' of type <int, int> to store the occurrence of prefixSum and its count.
+2. Create a variable 'sum' to keep track of prefix sum.
+3. Create a variable 'count' to count the number of subarrays.
+4. Loop through the given array and update the prefix sum.
+5. Increment the count by number of occurrence of 'sum -k' from the prefixSumOccurrences.
+6. Insert the prefix sum and it's current count in the prefixSumOccurrences -> prefixSumOccurences[sum]++;
+
+```
+
+<details><summary>Code</summary>
+
+<p>
+
+	
+```C++
+class Solution{
+    public:
+    int findSubArraySum(int Arr[], int N, int k)
+    {
+        unordered_map<int,int> prefixSumOccurences;
+        int sum = 0;
+        int count=0;
+        for(int i=0; i<N; i++) {
+            sum += Arr[i];
+            if(sum==k) count++;
+            count+=prefixSumOccurences[sum-k];
+            prefixSumOccurences[sum]++;
+            
+        }
+        return count;
+    }
+};
+	
+```
+</p>
+</details>
+	
+
 
 
