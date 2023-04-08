@@ -632,5 +632,69 @@ int longestPalindrome(vector<string>& words) {
 </details>
 	
 
+## [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/description/)
+> Submission code: [Check here](https://leetcode.com/problems/range-sum-query-2d-immutable/submissions/929440689/)
+
+##### Concept
+
+```
+Prefix Sum of 2D array concept
+
+```
+
+##### Algorithm
+
+```
+1. Calculate the prefix sum of the given 2D Array.
+prefixSum[i][j] = prefixSum[i-1][j] + prefixSum[i][j-1] + array[i][j] - prefixSum[i-1][j-1];
+2. Calculate prefixSum of given range.
+prefixSum[r1,c1 -> r2,c2] = prefixSum[r2][c2] - prefixSum[r1-1][c2] - prefixSum[r2][c1-1] + prefixSum[r1-1][c1-1];
+```
+
+<details><summary>Code</summary>
+
+<p>
+
+	
+```C++
+
+class NumMatrix {
+public:
+    vector<vector<int>> prefixSum;
+    NumMatrix(vector<vector<int>>& matrix) {
+        int m = matrix.size(); int n = matrix[0].size();
+        prefixSum.resize(m);
+        for(int i=0; i<m; i++) {
+            prefixSum[i].resize(n);
+            for(int j=0; j<n; j++) {
+                prefixSum[i][j] = matrix[i][j];
+                if(i-1 >= 0) prefixSum[i][j] += prefixSum[i-1][j];
+                if(j-1 >= 0)  prefixSum[i][j] += prefixSum[i][j-1];
+                if((i-1 >= 0) && (j-1 >= 0)) prefixSum[i][j] -= prefixSum[i-1][j-1];
+            }
+        }
+        
+    }
+    
+    int sumRegion(int row1, int col1, int row2, int col2) {
+        int sum = prefixSum[row2][col2];
+        if(row1-1>=0) sum -= prefixSum[row1-1][col2];
+        if(col1-1>=0) sum -= prefixSum[row2][col1-1];
+        if((row1-1>=0) && (col1-1>=0)) sum+=prefixSum[row1-1][col1-1];
+        return sum;
+    }
+};
+
+/**
+ * Your NumMatrix object will be instantiated and called as such:
+ * NumMatrix* obj = new NumMatrix(matrix);
+ * int param_1 = obj->sumRegion(row1,col1,row2,col2);
+ */
+	
+```
+</p>
+</details>
+	
+
 
 
