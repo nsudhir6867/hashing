@@ -1,4 +1,4 @@
-## [Two Sum](https://leetcode.com/problems/two-sum/description/)
+## [1 Two Sum](https://leetcode.com/problems/two-sum/description/)
 > Submission code: [Check here](https://leetcode.com/problems/two-sum/submissions/926969861/)
 
 ##### Concept
@@ -55,7 +55,7 @@ public:
 </details>
 	
 	
-## [Cumulative Sum Query ](https://www.spoj.com/problems/CSUMQ/)
+## [2 Cumulative Sum Query ](https://www.spoj.com/problems/CSUMQ/)
 > Submission code: [Check here](https://www.spoj.com/status/CSUMQ,nsudhir/)
 
 ##### Concept
@@ -112,7 +112,7 @@ int main() {
 </p>
 </details>
 	
-## [Max distance between same elements](https://practice.geeksforgeeks.org/problems/max-distance-between-same-elements/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
+## [3 Max distance between same elements](https://practice.geeksforgeeks.org/problems/max-distance-between-same-elements/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
 > Submission code: [Check here](https://practice.geeksforgeeks.org/problems/max-distance-between-same-elements/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
 
 ##### Concept
@@ -163,7 +163,7 @@ class Solution{
 </p>
 </details>
 
-## [First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)
+## [4 First Unique Character in a String](https://leetcode.com/problems/first-unique-character-in-a-string/)
 > Submission code: [Check here](https://leetcode.com/problems/first-unique-character-in-a-string/submissions/927026665/)
 
 ##### Concept
@@ -212,7 +212,7 @@ public:
 </p>
 </details>
 	
-## [Find Common Characters](https://leetcode.com/problems/find-common-characters/)
+## [5 Find Common Characters](https://leetcode.com/problems/find-common-characters/)
 > Submission code: [Check here](https://leetcode.com/problems/find-common-characters/submissions/927047923/)
 
 ##### Concept
@@ -272,7 +272,7 @@ public:
 </details>
 	
 
-## [Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
+## [6 Longest Consecutive Sequence](https://leetcode.com/problems/longest-consecutive-sequence/)
 > Submission code: [Check here](https://leetcode.com/problems/longest-consecutive-sequence/submissions/928263138/)
 
 ##### Concept
@@ -331,7 +331,7 @@ public:
 </p>
 </details>
 
-## [Largest subarray with 0 sum](https://practice.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
+## [7 Largest subarray with 0 sum](https://practice.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
 > Submission code: [Check here](https://practice.geeksforgeeks.org/problems/largest-subarray-with-0-sum/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
 
 ##### Concept
@@ -402,7 +402,7 @@ class Solution{
 </p>
 </details>
 	
-## [Count Number of Pairs With Absolute Difference K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/description/)
+## [8 Count Number of Pairs With Absolute Difference K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/description/)
 > Submission code: [Check here](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/submissions/927177323/)
 
 ##### Concept
@@ -449,7 +449,7 @@ public:
 </details>
 	
 
-## [Subarrays with sum K](https://practice.geeksforgeeks.org/problems/subarrays-with-sum-k/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
+## [9 Subarrays with sum K](https://practice.geeksforgeeks.org/problems/subarrays-with-sum-k/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
 > Submission code: [Check here](https://practice.geeksforgeeks.org/problems/subarrays-with-sum-k/1?utm_source=gfg&utm_medium=article&utm_campaign=bottom_sticky_on_article)
 
 ##### Concept
@@ -508,7 +508,7 @@ class Solution{
 </details>
 	
 
-## [Longest Palindrome by Concatenating Two Letter Words](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/)
+## [10 Longest Palindrome by Concatenating Two Letter Words](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/)
 > Submission code: [Check here](https://leetcode.com/problems/longest-palindrome-by-concatenating-two-letter-words/submissions/929162572/)
 
 ##### Concept
@@ -632,7 +632,7 @@ int longestPalindrome(vector<string>& words) {
 </details>
 	
 
-## [Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/description/)
+## [11 Range Sum Query 2D - Immutable](https://leetcode.com/problems/range-sum-query-2d-immutable/description/)
 > Submission code: [Check here](https://leetcode.com/problems/range-sum-query-2d-immutable/submissions/929440689/)
 
 ##### Concept
