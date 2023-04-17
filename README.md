@@ -21,8 +21,9 @@ so if we can find another element b that is 2 in the array then we can say there
 2. Traverse the array and try to find if element 'target - nums[i]' is present in the map.
 3. if it's not present, insert (nums[i], i) into map and move forward.
 4. if it's present, push the index of both element into an array and return it.
-Note: Always check if target-nums[i] exists in the map before inserting the it into the map, because if you check after inserting, 
-you will find the same element for 6 in the map.
+Note: 
+Always check if target-nums[i] exists in the map before inserting the it into the map, 
+because if you check after inserting, you will find the same element for 6 in the map.
 ```
 
 <details><summary>Code</summary>
@@ -64,13 +65,14 @@ public:
 
 Input: arr[] = {10, 20, 10, 5, 15}
 Output: prefixSum[] = {10, 30, 40, 45, 60}
-Explanation: While traversing the array, update the element by adding it with its previous element.
+Explanation: 
+While traversing the array, update the element by adding it with its previous element.
 prefixSum[i] = prefixSum[i-1] + arr[i],
 prefixSum[0] = 10, 
 prefixSum[1] = prefixSum[0] + arr[1] = 30, 
 prefixSum[2] = prefixSum[1] + arr[2] = 40 and so on.
 	
-To get prefixSum in range from l to r, we can get prefixSum[r] and subtract prefixSum[l-1] from it.
+To get prefixSum in range (l -> r), we can get prefixSum[r] and subtract prefixSum[l-1] from it.
 prefixSum[l -> r] = prefixSum[r] - prefixSum[l-1],
 
 ```
@@ -131,7 +133,8 @@ If the difference is more than the result so far, then update the result.
 2. Take a variable maximum.
 2. Traverse the array and try to find if same element is present in the hashmap or not.
 3. if it's not present, insert (nums[i], i) into map and move forward.
-4. if it's present, find the difference of indices of both occurence. if difference is greater than the maximum, update maximum.
+4. if it's present, find the difference of indices of both occurence. 
+   if difference is greater than the maximum, update maximum.
 
 ```
 
@@ -227,8 +230,11 @@ then we will loop throught the hashmap till the freq is zero and push the charac
 ##### Algorithm
 
 ```
-1. Create a hashmap alphaFreq<char, int> and set freq of each letter of alphabet to the maximum value of int or constraint.
-2. Loop through each character of each word. create a hashmap freq and store the freq of each character of each word and the set the alphaFreq to the minimum freq of each character of each word.
+1. Create a hashmap alphaFreq<char, int> and 
+   set freq of each letter of alphabet to the maximum value of int or constraint.
+2. Loop through each character of each word. 
+   create a hashmap freq and store the freq of each character of each word and 
+   then set the alphaFreq to the minimum freq of each character of each word.
 3. Loop through the alphaFreq and push the character in the solution array until freq becomes 0.
 
 ```
@@ -278,7 +284,8 @@ public:
 ##### Concept
 
 ```
-we can check loop over the array and check if any number that is one less than the current number exists in the array,
+we can check loop over the array and 
+check if any number that is one less than the current number exists in the array,
 if it doesn't exist then we can start counting the sequence from that number.
 
 ```
@@ -288,10 +295,13 @@ if it doesn't exist then we can start counting the sequence from that number.
 ```
 1. Take two hashmap present and checked of type <int, bool>
 2. Iterate over the given array and insert the element and true in present hashmap.
-3. Iterate over the given array and check if a number that 1 less than the current number doesn't exist in present 
-hashmap and current number is not in the checked hashmap.
-4. If it doesn't exist in present hashmap and checked hashmap, then we know that it can be start point of any subsequence.
-5. Now we will check if the sequence is present by incrementing the start point, we will also set the checked hashmap to true to for that number.
+3. Iterate over the given array and 
+   check if a number that 1 less than the current number doesn't exist in present 
+   hashmap and current number is not in the checked hashmap.
+4. If it doesn't exist in present hashmap and checked hashmap, 
+   then we know that it can be start point of any subsequence.
+5. Now we will check if the sequence is present by incrementing the start point, 
+   we will also set the checked hashmap to true to for that number.
 6. Once the sequence is over, we will check if it's length is maximum or not.
 7. We will update the maximum_sequence length.
 ```
@@ -348,7 +358,8 @@ we maintain a sum variable = 0, longest_length = 0
 we store whole prefix sum in an variable sum = 0 one by one
 we store all prefix_sum and first_occ_index in our map.
 when we get a prefix_sum we check in map if its not present we store it in the map
-if its present, we do that index i - map[that_prefix_sum] i.e map[4] give us first_occ_index for that sum and then we update the longest_length
+if its present, we do that index i - map[that_prefix_sum] 
+i.e map[4] give us first_occ_index for that sum and then we update the longest_length
 
 ```
 
@@ -359,8 +370,9 @@ if its present, we do that index i - map[that_prefix_sum] i.e map[4] give us fir
 2. Create variable sum and maxi to store sum and largest subarray.
 3. Iterate over the array and add the element to sum, 
 if sum becomes zero, update maxi with i+1, else check if sum is present in the firstOccurence,
-4. If it's present, find the length of of the subarray that is difference between the first occurence and current occurence,
-and update the maxi if the subarray length is maximum.
+4. If it's present, find the length of of the subarray 
+   that is difference between the first occurence and current occurence,
+   and update the maxi if the subarray length is maximum.
 5. If element is not present, then insert it in the firstOccurence.
 ```
 
@@ -539,17 +551,18 @@ other strings can be used for even times only(4 times "gg" or 2 times "ll")
 3. Create a count variable,
 4. Create a variable flag to check if we have used type(ii) string odd number of times.
 5. Iterate over the given array of strings.
-	6. if the word is type(i). if it is, create a variable and store the reverse of word in it.
-		7. Check in the hashmap if the reverse is present. if it is, find the count = min(occurrence[word], occurrence[reverse])
-		8. Update the lenghth.
-		9. erase the word and its reverse from the map so that it can not be counted twice.
-	9.else if the word is type(ii),
-		10. find its occurrence(means count) from hashmap.
-		11. if count is even, increment the length by (count*2)
-		12. If count is odd, 
-			13. If flag is false, increment length by (count*2), set flag to true.
-			14. If flag is true, increment length by [(count-1)*2]
-		15. Erase the word from hashmap
+   6. if the word is type(i). if it is, create a variable and store the reverse of word in it.
+      7. Check in the hashmap if the reverse is present. if it is, 
+         find the count = min(occurrence[word], occurrence[reverse])
+      8. Update the lenghth.
+         9. erase the word and its reverse from the map so that it can not be counted twice.
+      9.else if the word is type(ii),
+	10. find its occurrence(means count) from hashmap.
+	11. if count is even, increment the length by (count*2)
+	12. If count is odd, 
+		13. If flag is false, increment length by (count*2), set flag to true.
+		14. If flag is true, increment length by [(count-1)*2]
+	15. Erase the word from hashmap
 
 ```
 
